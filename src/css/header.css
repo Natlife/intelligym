@@ -1,0 +1,269 @@
+.site-header {
+  min-height: 78px;
+  padding: 10px clamp(18px, 4vw, 48px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(14px, 2.5vw, 30px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(3, 13, 20, .82);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, .05);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: clamp(18px, 2vw, 28px);
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+.brand img {
+  width: clamp(58px, 7vw, 92px);
+  height: clamp(42px, 5vw, 64px);
+  object-fit: contain;
+}
+
+.brand-mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-block;
+  background: conic-gradient(from 120deg, #fff, #9ca3af, #fff);
+  border: 2px solid rgba(255, 255, 255, .25);
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 2vw, 26px);
+  font-size: clamp(11px, 1vw, 13px);
+  font-weight: 700;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.desktop-nav a {
+  color: rgba(255, 255, 255, .86);
+  transition: color .25s;
+}
+
+.desktop-nav a:hover {
+  color: var(--green);
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #00BFFC 0%, #00FD8E 100%);
+  color: #ffffff !important;
+  padding: 14px clamp(22px, 2.5vw, 34px);
+  font-size: clamp(13px, 1.2vw, 16px);
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(0, 253, 142, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  flex: 0 0 auto;
+}
+
+.nav-cta:hover {
+  color: #ffffff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(0, 253, 142, 0.38);
+}
+
+.menu-btn {
+  display: none;
+  background: transparent;
+  border: 0;
+  width: 32px;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.menu-btn span {
+  display: block;
+  height: 2px;
+  background: white;
+  margin: 6px 0;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+/* Animations for menu button toggle */
+.menu-btn.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.menu-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* Desktop Styles matching Figma Ref */
+@media (min-width: 981px) {
+  .site-header {
+    min-height: 86px;
+    padding: 0 34px;
+    background: #030303;
+    border-bottom: none;
+    gap: 34px;
+  }
+
+  .brand {
+    gap: 12px;
+    min-width: 360px;
+  }
+
+  .brand img {
+    width: 72px;
+    height: 58px;
+  }
+
+  .brand > div {
+    font-size: 30px !important;
+    line-height: 1 !important;
+    letter-spacing: .03em;
+    font-weight: 800 !important;
+  }
+
+  .desktop-nav {
+    gap: 38px;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  .nav-cta {
+    min-width: 220px;
+    height: 56px;
+    padding: 0 28px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 981px) and (max-width: 1250px) {
+  .site-header {
+    gap: 18px;
+  }
+
+  .brand {
+    min-width: 285px;
+  }
+
+  .brand > div {
+    font-size: 24px !important;
+  }
+
+  .desktop-nav {
+    gap: 20px;
+    font-size: 16px;
+  }
+
+  .nav-cta {
+    min-width: 180px;
+    font-size: 15px;
+  }
+}
+
+/* Mobile responsive navigation styles */
+@media (max-width: 980px) {
+  .site-header {
+    background: #030303;
+    padding-inline: 22px;
+    min-height: 70px;
+  }
+
+  .nav-cta {
+    display: none; /* Hidden on header, will put in nav drawer if we want, or rely on page CTA */
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .desktop-nav {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(100vh - 70px);
+    background: rgba(3, 13, 20, 0.98);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--line);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 22px;
+    gap: 28px;
+    font-size: 22px;
+    font-weight: 800;
+    z-index: 99;
+  }
+
+  .desktop-nav.open {
+    display: flex;
+    animation: slideDown 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .brand {
+    gap: 10px;
+    max-width: calc(100% - 54px);
+  }
+
+  .brand img {
+    width: 64px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    min-height: 64px;
+  }
+
+  .desktop-nav {
+    top: 64px;
+    height: calc(100vh - 64px);
+  }
+
+  .brand {
+    font-size: 18px;
+  }
+
+  .brand img {
+    width: 52px;
+    height: 42px;
+  }
+}

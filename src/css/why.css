@@ -1,0 +1,116 @@
+.why-figma {
+  padding-top: 95px;
+  padding-bottom: 95px;
+}
+
+.why-figma .section-title {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.why-figma .section-title h2 {
+  color: #ffffff;
+  font-size: 54px;
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.why-grid-figma {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 44px 64px;
+}
+
+.why-card {
+  min-height: 138px;
+  padding: 36px 38px;
+  border-radius: 22px;
+  background: #141826;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 22px 58px rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(128, 246, 142, 0.45);
+}
+
+.why-check {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  color: #80f68e;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-check svg {
+  width: 46px;
+  height: 46px;
+  display: block;
+}
+
+.why-card h3 {
+  color: #ffffff;
+  font-size: 25px;
+  line-height: 1.25;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+/* Responsive Overrides (Removing the broken 3-column forced layout) */
+@media (max-width: 1024px) {
+  .why-figma {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+
+  .why-figma .section-title h2 {
+    font-size: clamp(32px, 6vw, 54px);
+  }
+
+  .why-grid-figma {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .why-card {
+    min-height: auto;
+    padding: 24px 28px;
+    gap: 18px;
+  }
+
+  .why-card h3 {
+    font-size: clamp(18px, 2.5vw, 24px);
+  }
+
+  .why-check {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+  }
+
+  .why-check svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .why-grid-figma {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .why-card {
+    padding: 20px 22px;
+  }
+}

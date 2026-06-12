@@ -1,0 +1,178 @@
+.process-figma {
+  padding-top: 90px;
+  padding-bottom: 105px;
+}
+
+.process-figma .section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.process-figma .section-title h2 {
+  color: #ffffff;
+  font-size: 54px;
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-bottom: 18px;
+}
+
+.process-figma .section-title p {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 21px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.process-grid-figma {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 64px;
+}
+
+.process-card {
+  position: relative;
+  min-height: 420px;
+  padding: 58px 36px 38px;
+  border-radius: 24px;
+  background: #141826;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.22);
+  overflow: visible;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(128, 246, 142, 0.45);
+}
+
+.process-number {
+  display: block;
+  color: rgba(80, 156, 94, 0.42);
+  font-size: 100px;
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  margin-bottom: 20px;
+}
+
+.process-icon {
+  width: 92px;
+  height: 92px;
+  border-radius: 18px;
+  background: rgba(83, 214, 121, 0.22);
+  color: #80f68e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.process-icon svg {
+  width: 56px;
+  height: 56px;
+  display: block;
+}
+
+.process-card h3 {
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 900;
+  margin-bottom: 24px;
+}
+
+.process-card p {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 22px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* Horizontal process indicator arrow for desktop */
+.process-card:not(:last-child)::after {
+  content: "›";
+  position: absolute;
+  right: -42px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(80, 156, 94, 0.65);
+  font-size: 72px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+/* Responsive Overrides (Removing the broken 3-column forced layout) */
+@media (max-width: 1024px) {
+  .process-figma {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+
+  .process-figma .section-title h2 {
+    font-size: clamp(32px, 6vw, 54px);
+  }
+
+  .process-figma .section-title p {
+    font-size: clamp(16px, 3vw, 21px);
+  }
+
+  .process-grid-figma {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    max-width: 540px;
+    margin-inline: auto;
+  }
+
+  .process-card {
+    min-height: auto;
+    padding: 36px 30px;
+  }
+
+  .process-card h3 {
+    font-size: clamp(22px, 4vw, 30px);
+    margin-bottom: 16px;
+  }
+
+  .process-card p {
+    font-size: clamp(16px, 3vw, 20px);
+  }
+
+  .process-number {
+    font-size: 80px;
+    margin-bottom: 12px;
+  }
+
+  .process-icon {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 20px;
+  }
+
+  .process-icon svg {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Rotate indicator arrow to point downward when stacked */
+  .process-card:not(:last-child)::after {
+    content: "↓";
+    right: 50%;
+    top: auto;
+    bottom: -40px;
+    transform: translateX(50%);
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .process-grid-figma {
+    gap: 40px;
+  }
+
+  .process-card:not(:last-child)::after {
+    bottom: -34px;
+    font-size: 28px;
+  }
+}

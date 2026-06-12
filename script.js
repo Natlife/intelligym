@@ -2,11 +2,15 @@ const menuBtn = document.querySelector('.menu-btn');
 const nav = document.querySelector('.desktop-nav');
 
 menuBtn?.addEventListener('click', () => {
+  menuBtn.classList.toggle('open');
   nav.classList.toggle('open');
 });
 
 document.querySelectorAll('.desktop-nav a').forEach((link) => {
-  link.addEventListener('click', () => nav.classList.remove('open'));
+  link.addEventListener('click', () => {
+    menuBtn?.classList.remove('open');
+    nav.classList.remove('open');
+  });
 });
 
 const observer = new IntersectionObserver((entries) => {

@@ -1,0 +1,11 @@
+{
+  "name": "intelligym-landing",
+  "version": "1.0.0",
+  "description": "GYMTELLIGENT Landing Page",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}
