@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chính Sách Quyền Riêng Tư – Gymtelligent</title>
+  <meta name="description" content="Chính sách quyền riêng tư của ứng dụng Gymtelligent – AI-Powered Fitness App. Tìm hiểu cách chúng tôi thu thập, sử dụng và bảo vệ dữ liệu cá nhân của bạn." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Privacy Policy Page Styles ── */
+    :root {
+      --bg: #0a0d0f;
+      --bg2: #101418;
+      --card: #13181f;
+      --border: rgba(128, 246, 142, 0.12);
+      --green: #80f68e;
+      --green-dim: rgba(128, 246, 142, 0.15);
+      --green-glow: rgba(128, 246, 142, 0.08);
+      --text: #e8ecef;
+      --muted: #8a9bb0;
+      --white: #ffffff;
+      --radius: 14px;
+      --radius-lg: 22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .pp-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 13, 15, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .pp-header .brand {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      text-decoration: none;
+    }
+
+    .pp-header .brand img {
+      height: 36px;
+      width: auto;
+    }
+
+    .pp-header .brand-name {
+      color: var(--white);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+    }
+
+    .pp-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      background: var(--green-dim);
+      border: 1px solid var(--border);
+      color: var(--green);
+      font-family: 'Inter', sans-serif;
+      font-size: .875rem;
+      font-weight: 600;
+      padding: .5rem 1.1rem;
+      border-radius: 9px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+    }
+
+    .pp-back-btn:hover {
+      background: rgba(128, 246, 142, 0.25);
+      transform: translateX(-2px);
+    }
+
+    .pp-back-btn svg {
+      width: 16px; height: 16px;
+    }
+
+    /* Hero banner */
+    .pp-hero {
+      background: linear-gradient(135deg, #0a0d0f 0%, #0f1a12 50%, #0a0d0f 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 2rem 3.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pp-hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: 50%;
+      transform: translateX(-50%);
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(128, 246, 142, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .pp-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--green-dim);
+      border: 1px solid rgba(128, 246, 142, 0.25);
+      color: var(--green);
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .35rem .9rem;
+      border-radius: 999px;
+      margin-bottom: 1.2rem;
+    }
+
+    .pp-hero-badge svg { width: 14px; height: 14px; }
+
+    .pp-hero h1 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: .8rem;
+    }
+
+    .pp-hero h1 span { color: var(--green); }
+
+    .pp-hero-sub {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 520px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .pp-hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .pp-hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .pp-hero-meta svg { width: 15px; height: 15px; color: var(--green); }
+
+    /* Layout */
+    .pp-layout {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .pp-layout {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.2rem 4rem;
+        gap: 2rem;
+      }
+    }
+
+    /* Sidebar TOC */
+    .pp-toc {
+      position: sticky;
+      top: 88px;
+    }
+
+    .pp-toc-inner {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.2rem;
+    }
+
+    .pp-toc-title {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1rem;
+      padding-bottom: .6rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pp-toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .1rem;
+    }
+
+    .pp-toc-list a {
+      display: block;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .82rem;
+      padding: .38rem .6rem;
+      border-radius: 7px;
+      transition: background .18s, color .18s, padding-left .18s;
+      line-height: 1.4;
+    }
+
+    .pp-toc-list a:hover {
+      background: var(--green-dim);
+      color: var(--green);
+      padding-left: .9rem;
+    }
+
+    .pp-toc-list a.active {
+      background: var(--green-dim);
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .pp-toc { display: none; }
+    }
+
+    /* Main content */
+    .pp-content { min-width: 0; }
+
+    /* Sections */
+    .pp-section {
+      margin-bottom: 2.8rem;
+      scroll-margin-top: 88px;
+    }
+
+    .pp-section-header {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: .8rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pp-section-num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px; height: 32px;
+      background: var(--green-dim);
+      border: 1px solid rgba(128, 246, 142, 0.3);
+      border-radius: 8px;
+      color: var(--green);
+      font-size: .8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .pp-section h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    .pp-section p {
+      color: var(--text);
+      font-size: .95rem;
+      margin-bottom: .9rem;
+      line-height: 1.75;
+    }
+
+    .pp-section p:last-child { margin-bottom: 0; }
+
+    /* Sub-sections */
+    .pp-subsection {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .pp-subsection h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: .75rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .pp-subsection h3::before {
+      content: '';
+      display: inline-block;
+      width: 4px; height: 16px;
+      background: var(--green);
+      border-radius: 2px;
+    }
+
+    /* Lists */
+    .pp-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+    }
+
+    .pp-list li {
+      display: flex;
+      gap: .7rem;
+      align-items: flex-start;
+      color: var(--text);
+      font-size: .93rem;
+      line-height: 1.6;
+    }
+
+    .pp-list li::before {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+      margin-top: .55em;
+    }
+
+    /* Highlight box */
+    .pp-highlight {
+      background: linear-gradient(135deg, rgba(128, 246, 142, 0.08), rgba(128, 246, 142, 0.03));
+      border: 1px solid rgba(128, 246, 142, 0.2);
+      border-left: 3px solid var(--green);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.4rem;
+      margin: 1rem 0;
+      font-size: .93rem;
+      color: var(--text);
+    }
+
+    .pp-highlight strong { color: var(--green); }
+
+    /* Permission cards */
+    .pp-permissions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: .8rem;
+    }
+
+    .pp-perm-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .pp-perm-card:hover {
+      border-color: rgba(128, 246, 142, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .pp-perm-card-icon {
+      width: 36px; height: 36px;
+      background: var(--green-dim);
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: .7rem;
+    }
+
+    .pp-perm-card-icon svg { width: 18px; height: 18px; color: var(--green); }
+
+    .pp-perm-card h4 {
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: .35rem;
+    }
+
+    .pp-perm-card p {
+      font-size: .82rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* Contact card */
+    .pp-contact-card {
+      background: linear-gradient(135deg, rgba(128, 246, 142, 0.08), rgba(128, 246, 142, 0.02));
+      border: 1px solid rgba(128, 246, 142, 0.25);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      margin-top: 1rem;
+    }
+
+    .pp-contact-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+    }
+
+    .pp-contact-rows {
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+    }
+
+    .pp-contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: .9rem;
+    }
+
+    .pp-contact-row-icon {
+      width: 36px; height: 36px;
+      background: var(--green-dim);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .pp-contact-row-icon svg { width: 16px; height: 16px; color: var(--green); }
+
+    .pp-contact-row label {
+      display: block;
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      margin-bottom: .15rem;
+    }
+
+    .pp-contact-row span,
+    .pp-contact-row a {
+      font-size: .93rem;
+      color: var(--text);
+    }
+
+    .pp-contact-row a {
+      color: var(--green);
+      text-decoration: none;
+      transition: opacity .18s;
+    }
+
+    .pp-contact-row a:hover { opacity: .8; text-decoration: underline; }
+
+    /* Footer */
+    .pp-footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .pp-footer a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .pp-footer a:hover { text-decoration: underline; }
+
+    /* Scroll to top */
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px; height: 44px;
+      background: var(--green);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: #0a0d0f;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .3s, transform .3s;
+      z-index: 99;
+    }
+
+    .scroll-top-btn.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-top-btn:hover { background: #a5f8af; }
+
+    .scroll-top-btn svg { width: 20px; height: 20px; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="pp-header">
+    <a href="index.html" class="brand">
+      <img src="assets/NoBackground.png" alt="GYMTELLIGENT Logo" />
+      <span class="brand-name">GYMTELLIGENT</span>
+    </a>
+    <a href="index.html" class="pp-back-btn" id="backBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      Quay lại
+    </a>
+  </header>
+
+  <!-- Hero -->
+  <div class="pp-hero">
+    <div class="pp-hero-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      Chính sách bảo mật
+    </div>
+    <h1>Chính Sách <span>Quyền Riêng Tư</span></h1>
+    <p class="pp-hero-sub">Gymtelligent cam kết bảo vệ dữ liệu cá nhân và quyền riêng tư của bạn trong mọi tình huống sử dụng ứng dụng.</p>
+    <div class="pp-hero-meta">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        Có hiệu lực: Tháng 6, 2026
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+        </svg>
+        Cập nhật lần cuối: 20/06/2026
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        gymtelligent2026@gmail.com
+      </span>
+    </div>
+  </div>
+
+  <!-- Layout: TOC + Content -->
+  <div class="pp-layout">
+
+    <!-- Sidebar Table of Contents -->
+    <aside class="pp-toc" aria-label="Mục lục">
+      <div class="pp-toc-inner">
+        <p class="pp-toc-title">Mục lục</p>
+        <ul class="pp-toc-list" id="tocList">
+          <li><a href="#intro">1. Giới thiệu</a></li>
+          <li><a href="#disclaimer">2. Tuyên bố miễn trừ</a></li>
+          <li><a href="#data-collected">3. Thông tin thu thập</a></li>
+          <li><a href="#data-use">4. Cách sử dụng thông tin</a></li>
+          <li><a href="#permissions">5. Quyền truy cập</a></li>
+          <li><a href="#ai">6. Xử lý bằng AI</a></li>
+          <li><a href="#sharing">7. Chia sẻ thông tin</a></li>
+          <li><a href="#security">8. Bảo mật dữ liệu</a></li>
+          <li><a href="#retention">9. Lưu trữ dữ liệu</a></li>
+          <li><a href="#deletion">10. Xóa tài khoản</a></li>
+          <li><a href="#rights">11. Quyền người dùng</a></li>
+          <li><a href="#children">12. Quyền riêng tư trẻ em</a></li>
+          <li><a href="#international">13. Chuyển dữ liệu quốc tế</a></li>
+          <li><a href="#changes">14. Thay đổi chính sách</a></li>
+          <li><a href="#contact">15. Liên hệ</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="pp-content" id="mainContent">
+
+      <!-- Section 1 -->
+      <section class="pp-section" id="intro">
+        <div class="pp-section-header">
+          <span class="pp-section-num">01</span>
+          <h2>Giới thiệu</h2>
+        </div>
+        <p>Gymtelligent tôn trọng quyền riêng tư của bạn và cam kết bảo vệ dữ liệu cá nhân cũng như dữ liệu nhạy cảm của bạn.</p>
+        <p>Chính sách Quyền riêng tư này giải thích cách Gymtelligent thu thập, sử dụng, lưu trữ, chia sẻ và bảo vệ thông tin khi bạn sử dụng ứng dụng di động của chúng tôi. Gymtelligent là ứng dụng thể dục sử dụng trí tuệ nhân tạo, được thiết kế nhằm hỗ trợ người dùng cải thiện chất lượng tập luyện thông qua phân tích tư thế, phản hồi kỹ thuật theo thời gian thực, tự động đếm số lần lặp và hiệp tập, cũng như theo dõi tiến độ tập luyện.</p>
+        <div class="pp-highlight">
+          <strong>Lưu ý:</strong> Bằng việc sử dụng Gymtelligent, bạn đồng ý với các hoạt động được mô tả trong Chính sách Quyền riêng tư này.
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="pp-section" id="disclaimer">
+        <div class="pp-section-header">
+          <span class="pp-section-num">02</span>
+          <h2>Tuyên bố miễn trừ trách nhiệm về sức khỏe và thể dục</h2>
+        </div>
+        <p>Gymtelligent là một ứng dụng hỗ trợ tập luyện thể dục. Ứng dụng này không phải là thiết bị y tế và không cung cấp chẩn đoán y khoa, điều trị, phòng ngừa bệnh hoặc tư vấn y tế chuyên môn.</p>
+        <p>Các phân tích tư thế, phản hồi tập luyện, gợi ý bài tập và thông tin hiệu suất do Gymtelligent cung cấp chỉ nhằm mục đích hỗ trợ tập luyện và rèn luyện thể chất nói chung. Người dùng nên tham khảo ý kiến bác sĩ, chuyên gia y tế hoặc huấn luyện viên thể hình được chứng nhận trước khi bắt đầu hoặc thay đổi bất kỳ chương trình tập luyện nào, đặc biệt nếu đang có chấn thương, bệnh lý, hạn chế thể chất hoặc các vấn đề sức khỏe.</p>
+        <div class="pp-highlight">
+          <strong>Quan trọng:</strong> Người dùng có trách nhiệm tập luyện một cách an toàn và cần dừng mọi hoạt động nếu cảm thấy đau, chóng mặt, khó chịu hoặc xuất hiện bất kỳ triệu chứng bất thường nào.
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="pp-section" id="data-collected">
+        <div class="pp-section-header">
+          <span class="pp-section-num">03</span>
+          <h2>Thông tin chúng tôi thu thập</h2>
+        </div>
+        <p>Tùy thuộc vào cách bạn sử dụng Gymtelligent, chúng tôi có thể thu thập hoặc xử lý các loại thông tin sau.</p>
+
+        <div class="pp-subsection">
+          <h3>3.1. Thông tin tài khoản và hồ sơ</h3>
+          <p style="margin-bottom:.8rem;">Nếu Gymtelligent cung cấp tính năng đăng ký tài khoản hoặc hồ sơ người dùng, chúng tôi có thể thu thập:</p>
+          <ul class="pp-list">
+            <li>Tên hoặc tên hiển thị</li>
+            <li>Địa chỉ email</li>
+            <li>Thông tin đăng nhập hoặc mã định danh tài khoản</li>
+            <li>Ảnh hồ sơ, nếu người dùng tự nguyện cung cấp</li>
+            <li>Mục tiêu tập luyện, trình độ tập luyện, chiều cao, cân nặng hoặc các thông tin hồ sơ liên quan đến thể chất khác do người dùng tự nguyện nhập vào</li>
+          </ul>
+        </div>
+
+        <div class="pp-subsection">
+          <h3>3.2. Dữ liệu camera và chuyển động</h3>
+          <p style="margin-bottom:.8rem;">Gymtelligent có thể yêu cầu quyền truy cập camera trên thiết bị của bạn để cung cấp tính năng phân tích tư thế và phản hồi tập luyện theo thời gian thực. Khi bạn sử dụng tính năng phân tích bài tập bằng camera, ứng dụng có thể xử lý:</p>
+          <ul class="pp-list">
+            <li>Dữ liệu đầu vào từ camera, dữ liệu chuyển động cơ thể, các điểm mốc tư thế hoặc khung hình video</li>
+            <li>Phát hiện tư thế cơ thể và phân tích kỹ thuật thực hiện bài tập</li>
+            <li>Xác định các lỗi tư thế có thể xảy ra</li>
+            <li>Cung cấp phản hồi theo thời gian thực và đếm số lần lặp, số hiệp tập</li>
+          </ul>
+          <div class="pp-highlight" style="margin-top:.8rem; margin-bottom:0;">
+            <strong>Cam kết:</strong> Quyền truy cập camera chỉ được sử dụng khi bạn chủ động bắt đầu tính năng yêu cầu camera. Gymtelligent <strong>không</strong> truy cập camera ở chế độ nền và <strong>không</strong> lưu video thô cho mục đích quảng cáo.
+          </div>
+        </div>
+
+        <div class="pp-subsection">
+          <h3>3.3. Dữ liệu tập luyện và thể chất</h3>
+          <ul class="pp-list">
+            <li>Bài tập đã chọn, thời lượng tập luyện, số lần lặp và số hiệp</li>
+            <li>Lịch sử tập luyện và tiến độ tập luyện</li>
+            <li>Kết quả phân tích tư thế và các lỗi kỹ thuật được phát hiện</li>
+            <li>Phản hồi được cung cấp trong quá trình tập luyện</li>
+            <li>Mục tiêu thể chất hoặc sở thích tập luyện do người dùng nhập vào</li>
+          </ul>
+        </div>
+
+        <div class="pp-subsection">
+          <h3>3.4. Thông tin thiết bị và ứng dụng</h3>
+          <ul class="pp-list">
+            <li>Model thiết bị, phiên bản hệ điều hành, phiên bản ứng dụng</li>
+            <li>Cài đặt ngôn ngữ và khu vực</li>
+            <li>Nhật ký lỗi, dữ liệu hiệu suất, báo cáo lỗi</li>
+            <li>Mã định danh thiết bị hoặc ứng dụng khi cần thiết</li>
+          </ul>
+        </div>
+
+        <div class="pp-subsection">
+          <h3>3.5. Dữ liệu hỗ trợ và liên lạc</h3>
+          <ul class="pp-list">
+            <li>Tên và địa chỉ email của bạn</li>
+            <li>Nội dung tin nhắn hỗ trợ</li>
+            <li>Ảnh chụp màn hình hoặc tệp bạn tự nguyện cung cấp</li>
+            <li>Thông tin cần thiết để điều tra và giải quyết yêu cầu của bạn</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section class="pp-section" id="data-use">
+        <div class="pp-section-header">
+          <span class="pp-section-num">04</span>
+          <h2>Cách chúng tôi sử dụng thông tin</h2>
+        </div>
+        <p>Gymtelligent sử dụng thông tin được thu thập hoặc xử lý cho các mục đích sau:</p>
+        <ul class="pp-list">
+          <li>Cung cấp các tính năng chính của ứng dụng</li>
+          <li>Phân tích tư thế và chuyển động khi tập luyện</li>
+          <li>Cung cấp phản hồi tập luyện theo thời gian thực</li>
+          <li>Tự động đếm số lần lặp và số hiệp</li>
+          <li>Lưu và hiển thị lịch sử tập luyện</li>
+          <li>Cá nhân hóa trải nghiệm người dùng</li>
+          <li>Cải thiện hiệu suất, độ chính xác và khả năng sử dụng của ứng dụng</li>
+          <li>Sửa lỗi, sự cố và các vấn đề kỹ thuật</li>
+          <li>Duy trì bảo mật ứng dụng và ngăn chặn hành vi lạm dụng</li>
+          <li>Phản hồi các yêu cầu hỗ trợ của người dùng</li>
+          <li>Tuân thủ các yêu cầu pháp lý, quy định và yêu cầu của nền tảng</li>
+        </ul>
+        <div class="pp-highlight" style="margin-top:1rem;">
+          Chúng tôi <strong>không</strong> sử dụng dữ liệu cá nhân hoặc dữ liệu nhạy cảm của người dùng cho các mục đích không liên quan đến chức năng đã công bố nếu không có sự đồng ý phù hợp.
+        </div>
+      </section>
+
+      <!-- Section 5 -->
+      <section class="pp-section" id="permissions">
+        <div class="pp-section-header">
+          <span class="pp-section-num">05</span>
+          <h2>Quyền truy cập của ứng dụng</h2>
+        </div>
+        <p>Gymtelligent chỉ yêu cầu các quyền cần thiết cho các tính năng của ứng dụng.</p>
+
+        <div class="pp-permissions-grid">
+          <!-- Camera -->
+          <div class="pp-perm-card">
+            <div class="pp-perm-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                <circle cx="12" cy="13" r="4"/>
+              </svg>
+            </div>
+            <h4>Camera</h4>
+            <p>Phân tích tư thế theo thời gian thực, phát hiện chuyển động và đếm số lần lặp.</p>
+          </div>
+          <!-- Internet -->
+          <div class="pp-perm-card">
+            <div class="pp-perm-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <h4>Internet</h4>
+            <p>Truy cập tài khoản, đồng bộ dữ liệu, cập nhật ứng dụng và dịch vụ đám mây.</p>
+          </div>
+          <!-- Notifications -->
+          <div class="pp-perm-card">
+            <div class="pp-perm-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+              </svg>
+            </div>
+            <h4>Thông báo</h4>
+            <p>Nhắc nhở tập luyện, cập nhật tiến độ (chỉ khi người dùng cho phép).</p>
+          </div>
+          <!-- Storage -->
+          <div class="pp-perm-card">
+            <div class="pp-perm-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                <line x1="6" y1="6" x2="6.01" y2="6"/>
+                <line x1="6" y1="18" x2="6.01" y2="18"/>
+              </svg>
+            </div>
+            <h4>Ảnh / Bộ nhớ</h4>
+            <p>Chỉ dùng khi người dùng tải lên, lưu hoặc chọn ảnh/video từ thiết bị.</p>
+          </div>
+          <!-- Activity -->
+          <div class="pp-perm-card">
+            <div class="pp-perm-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <h4>Hoạt động thể chất</h4>
+            <p>Chỉ dùng khi Gymtelligent cung cấp tính năng cần dữ liệu hoạt động từ thiết bị.</p>
+          </div>
+        </div>
+
+        <p style="margin-top:1.2rem; color: var(--muted); font-size:.9rem;">
+          Người dùng có thể quản lý hoặc thu hồi quyền truy cập bất cứ lúc nào qua phần cài đặt trên thiết bị Android. Một số tính năng có thể không hoạt động đúng cách nếu các quyền cần thiết bị từ chối.
+        </p>
+      </section>
+
+      <!-- Section 6 -->
+      <section class="pp-section" id="ai">
+        <div class="pp-section-header">
+          <span class="pp-section-num">06</span>
+          <h2>Xử lý bằng trí tuệ nhân tạo</h2>
+        </div>
+        <p>Gymtelligent sử dụng công nghệ trí tuệ nhân tạo và thị giác máy tính để hỗ trợ phân tích tư thế, phát hiện chuyển động và cung cấp phản hồi tập luyện.</p>
+        <p>Việc xử lý bằng AI có thể được thực hiện trên thiết bị hoặc thông qua máy chủ bảo mật, tùy thuộc vào phiên bản ứng dụng và tính năng. Nếu dữ liệu được truyền đến máy chủ để xử lý, chúng tôi áp dụng các biện pháp bảo mật hợp lý để bảo vệ dữ liệu.</p>
+        <div class="pp-highlight">
+          Gymtelligent <strong>không bán</strong> dữ liệu camera, dữ liệu chuyển động hoặc dữ liệu tập luyện. Chúng tôi <strong>không sử dụng</strong> video camera thô hoặc dữ liệu tập luyện cá nhân để huấn luyện mô hình AI cho mục đích thương mại không liên quan, trừ khi có sự đồng ý rõ ràng từ người dùng hoặc dữ liệu đã được ẩn danh hoàn toàn.
+        </div>
+      </section>
+
+      <!-- Section 7 -->
+      <section class="pp-section" id="sharing">
+        <div class="pp-section-header">
+          <span class="pp-section-num">07</span>
+          <h2>Chia sẻ thông tin</h2>
+        </div>
+        <p>Gymtelligent <strong>không bán</strong> dữ liệu cá nhân của người dùng. Chúng tôi chỉ có thể chia sẻ thông tin trong các trường hợp sau:</p>
+
+        <div class="pp-subsection">
+          <h3>7.1. Nhà cung cấp dịch vụ</h3>
+          <p style="margin-bottom:.8rem;">Chúng tôi có thể chia sẻ dữ liệu giới hạn với các nhà cung cấp dịch vụ đáng tin cậy nhằm hỗ trợ vận hành và cải thiện ứng dụng:</p>
+          <ul class="pp-list">
+            <li>Nhà cung cấp dịch vụ lưu trữ đám mây và cơ sở dữ liệu</li>
+            <li>Dịch vụ xác thực và công cụ phân tích</li>
+            <li>Công cụ báo cáo lỗi và nhà cung cấp dịch vụ xử lý AI</li>
+            <li>Công cụ hỗ trợ khách hàng</li>
+          </ul>
+        </div>
+
+        <div class="pp-subsection">
+          <h3>7.2. Yêu cầu pháp lý và an toàn</h3>
+          <ul class="pp-list">
+            <li>Tuân thủ luật pháp hiện hành hoặc quy trình pháp lý</li>
+            <li>Phản hồi các yêu cầu hợp pháp từ cơ quan có thẩm quyền</li>
+            <li>Bảo vệ quyền, sự an toàn và tài sản của người dùng, Gymtelligent hoặc các bên khác</li>
+            <li>Điều tra gian lận, lạm dụng, vấn đề bảo mật hoặc vi phạm chính sách</li>
+          </ul>
+        </div>
+
+        <div class="pp-subsection">
+          <h3>7.3. Với sự đồng ý của người dùng</h3>
+          <p>Chúng tôi có thể chia sẻ thông tin cho các mục đích khác chỉ khi có sự đồng ý rõ ràng từ người dùng.</p>
+        </div>
+      </section>
+
+      <!-- Section 8 -->
+      <section class="pp-section" id="security">
+        <div class="pp-section-header">
+          <span class="pp-section-num">08</span>
+          <h2>Bảo mật dữ liệu</h2>
+        </div>
+        <p>Chúng tôi sử dụng các biện pháp kỹ thuật, hành chính và tổ chức hợp lý để bảo vệ dữ liệu người dùng khỏi việc truy cập trái phép, mất mát, lạm dụng, thay đổi hoặc tiết lộ.</p>
+        <ul class="pp-list">
+          <li>Mã hóa trong quá trình truyền dữ liệu</li>
+          <li>Kiểm soát truy cập và thực hành lưu trữ an toàn</li>
+          <li>Giới hạn quyền truy cập vào dữ liệu cá nhân</li>
+          <li>Giám sát bảo mật và đánh giá các dịch vụ, SDK của bên thứ ba</li>
+          <li>Giảm thiểu dữ liệu khi có thể</li>
+        </ul>
+        <p style="margin-top:.9rem; color:var(--muted); font-size:.9rem;">Tuy nhiên, không có phương thức truyền tải hoặc lưu trữ điện tử nào là an toàn tuyệt đối. Chúng tôi không thể đảm bảo bảo mật tuyệt đối nhưng sẽ nỗ lực bảo vệ dữ liệu bằng các biện pháp hợp lý theo tiêu chuẩn thương mại.</p>
+      </section>
+
+      <!-- Section 9 -->
+      <section class="pp-section" id="retention">
+        <div class="pp-section-header">
+          <span class="pp-section-num">09</span>
+          <h2>Lưu trữ dữ liệu</h2>
+        </div>
+        <p>Chúng tôi chỉ lưu giữ dữ liệu người dùng trong thời gian cần thiết để cung cấp dịch vụ, duy trì tài khoản, tuân thủ nghĩa vụ pháp lý, giải quyết tranh chấp và thực thi các điều khoản của chúng tôi.</p>
+        <ul class="pp-list">
+          <li><strong style="color:var(--white);">Dữ liệu tài khoản:</strong> được lưu giữ trong thời gian tài khoản còn hoạt động</li>
+          <li><strong style="color:var(--white);">Lịch sử tập luyện:</strong> được lưu giữ cho đến khi người dùng xóa dữ liệu đó, xóa tài khoản hoặc yêu cầu xóa</li>
+          <li><strong style="color:var(--white);">Dữ liệu camera:</strong> không được lưu giữ trừ khi người dùng chọn lưu, tải lên hoặc chia sẻ</li>
+          <li><strong style="color:var(--white);">Nhật ký lỗi và chẩn đoán:</strong> được lưu giữ trong khoảng thời gian giới hạn để cải thiện độ ổn định</li>
+          <li><strong style="color:var(--white);">Tin nhắn hỗ trợ:</strong> được lưu giữ khi cần thiết để phản hồi yêu cầu và duy trì hồ sơ dịch vụ</li>
+          <li><strong style="color:var(--white);">Dữ liệu ẩn danh / tổng hợp:</strong> có thể được lưu giữ cho mục đích phân tích, nghiên cứu và cải thiện ứng dụng</li>
+        </ul>
+      </section>
+
+      <!-- Section 10 -->
+      <section class="pp-section" id="deletion">
+        <div class="pp-section-header">
+          <span class="pp-section-num">10</span>
+          <h2>Xóa tài khoản và dữ liệu</h2>
+        </div>
+        <p>Nếu Gymtelligent cho phép người dùng tạo tài khoản, người dùng có thể yêu cầu xóa tài khoản và dữ liệu liên quan thông qua một trong các phương thức sau:</p>
+        <ul class="pp-list">
+          <li>Trong ứng dụng: <strong style="color:var(--white);">Cài đặt &gt; Tài khoản &gt; Xóa tài khoản</strong></li>
+          <li>Qua email: <a href="mailto:gymtelligent2026@gmail.com" style="color:var(--green); text-decoration:none;">gymtelligent2026@gmail.com</a></li>
+        </ul>
+        <p style="margin-top:.9rem;">Khi người dùng yêu cầu xóa tài khoản, chúng tôi sẽ xóa tài khoản và dữ liệu liên quan trong một khoảng thời gian hợp lý, trừ khi chúng tôi được yêu cầu hoặc được phép lưu giữ một số thông tin nhất định cho mục đích pháp lý, bảo mật, phòng chống gian lận, giải quyết tranh chấp hoặc tuân thủ quy định.</p>
+      </section>
+
+      <!-- Section 11 -->
+      <section class="pp-section" id="rights">
+        <div class="pp-section-header">
+          <span class="pp-section-num">11</span>
+          <h2>Quyền và lựa chọn của người dùng</h2>
+        </div>
+        <p>Tùy thuộc vào luật áp dụng và chức năng của ứng dụng, người dùng có thể có quyền:</p>
+        <ul class="pp-list">
+          <li>Truy cập dữ liệu cá nhân của mình</li>
+          <li>Chỉnh sửa hoặc cập nhật thông tin</li>
+          <li>Xóa lịch sử tập luyện hoặc dữ liệu tài khoản</li>
+          <li>Yêu cầu xóa tài khoản</li>
+          <li>Rút lại sự đồng ý bằng cách thay đổi quyền trong ứng dụng hoặc cài đặt thiết bị</li>
+          <li>Tắt thông báo</li>
+          <li>Liên hệ với chúng tôi về các câu hỏi hoặc yêu cầu liên quan đến quyền riêng tư</li>
+        </ul>
+      </section>
+
+      <!-- Section 12 -->
+      <section class="pp-section" id="children">
+        <div class="pp-section-header">
+          <span class="pp-section-num">12</span>
+          <h2>Quyền riêng tư của trẻ em</h2>
+        </div>
+        <p>Gymtelligent không dành cho trẻ em dưới 13 tuổi hoặc dưới độ tuổi tối thiểu theo quy định pháp luật tại quốc gia của người dùng.</p>
+        <div class="pp-highlight">
+          Chúng tôi không cố ý thu thập dữ liệu cá nhân từ trẻ em nếu không có sự đồng ý phù hợp của cha mẹ hoặc người giám hộ. Nếu chúng tôi phát hiện rằng mình đã thu thập dữ liệu cá nhân từ trẻ em mà không có sự đồng ý cần thiết, chúng tôi sẽ thực hiện các bước hợp lý để xóa thông tin đó.
+        </div>
+      </section>
+
+      <!-- Section 13 -->
+      <section class="pp-section" id="international">
+        <div class="pp-section-header">
+          <span class="pp-section-num">13</span>
+          <h2>Chuyển dữ liệu quốc tế</h2>
+        </div>
+        <p>Tùy thuộc vào các dịch vụ và hạ tầng được sử dụng, dữ liệu người dùng có thể được xử lý hoặc lưu trữ tại các quốc gia khác với quốc gia cư trú của người dùng.</p>
+        <p>Khi dữ liệu được chuyển ra quốc tế, chúng tôi áp dụng các biện pháp hợp lý để đảm bảo dữ liệu vẫn được bảo vệ phù hợp với Chính sách Quyền riêng tư này và các yêu cầu bảo vệ dữ liệu hiện hành.</p>
+      </section>
+
+      <!-- Section 14 -->
+      <section class="pp-section" id="changes">
+        <div class="pp-section-header">
+          <span class="pp-section-num">14</span>
+          <h2>Thay đổi Chính sách Quyền riêng tư này</h2>
+        </div>
+        <p>Chúng tôi có thể cập nhật Chính sách Quyền riêng tư này theo thời gian để phản ánh các thay đổi trong ứng dụng, công nghệ, yêu cầu pháp lý hoặc hoạt động xử lý dữ liệu của chúng tôi.</p>
+        <p>Khi có thay đổi quan trọng, chúng tôi có thể thông báo cho người dùng thông qua ứng dụng, website hoặc các phương thức phù hợp khác. "Ngày có hiệu lực" ở đầu Chính sách Quyền riêng tư này sẽ được cập nhật khi có thay đổi.</p>
+        <div class="pp-highlight">
+          Người dùng được khuyến khích xem lại Chính sách Quyền riêng tư này định kỳ để luôn cập nhật thông tin mới nhất.
+        </div>
+      </section>
+
+      <!-- Section 15 -->
+      <section class="pp-section" id="contact">
+        <div class="pp-section-header">
+          <span class="pp-section-num">15</span>
+          <h2>Liên hệ với chúng tôi</h2>
+        </div>
+        <p>Nếu bạn có bất kỳ câu hỏi, thắc mắc hoặc yêu cầu nào liên quan đến Chính sách Quyền riêng tư này, vui lòng liên hệ với chúng tôi:</p>
+        <div class="pp-contact-card">
+          <h3>Thông tin liên hệ</h3>
+          <div class="pp-contact-rows">
+            <div class="pp-contact-row">
+              <div class="pp-contact-row-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <path d="M9 9h1v6H9zM15 9h-1v6h1zM12 9v2M12 13v2"/>
+                </svg>
+              </div>
+              <div>
+                <label>Tên ứng dụng</label>
+                <span>Gymtelligent – AI-Powered Fitness App</span>
+              </div>
+            </div>
+            <div class="pp-contact-row">
+              <div class="pp-contact-row-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <div>
+                <label>Nhà phát triển</label>
+                <span>Gymtelligent</span>
+              </div>
+            </div>
+            <div class="pp-contact-row">
+              <div class="pp-contact-row-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div>
+                <label>Email liên hệ</label>
+                <a href="mailto:gymtelligent2026@gmail.com">gymtelligent2026@gmail.com</a>
+              </div>
+            </div>
+            <div class="pp-contact-row">
+              <div class="pp-contact-row-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </div>
+              <div>
+                <label>Website</label>
+                <a href="https://gymtelligent.io.vn" target="_blank" rel="noopener noreferrer">gymtelligent.io.vn</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="pp-footer">
+    <p>© 2026 GYMTELLIGENT. All rights reserved. &nbsp;|&nbsp; <a href="index.html">Trang chủ</a> &nbsp;|&nbsp; <a href="mailto:gymtelligent2026@gmail.com">gymtelligent2026@gmail.com</a></p>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Cuộn lên đầu trang">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script>
+    // ── Scroll to top button ──
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ── Active TOC highlighting ──
+    const tocLinks = document.querySelectorAll('#tocList a');
+    const sections = document.querySelectorAll('.pp-section');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+
+    sections.forEach(sec => observer.observe(sec));
+  </script>
+
+</body>
+</html>
